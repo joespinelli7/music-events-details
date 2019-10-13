@@ -2,21 +2,21 @@ nav {
   background: #fc8700;
   color: white;
   height: 2.5rem;
-}
-
-nav > h2 {
-  margin: 0;
-  display: inline-block;
-}
-
-nav > ul {
-  float: right;
-  margin: 0;
-}
-
-nav > ul > li {
-  display: inline-block;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
+  h2 {
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+  }
+  ul {
+    float: right;
+    margin: 0;
+    li {
+      display: inline-block;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 7.5px;
+      cursor: pointer;
+      font-weight: 500
+    }
+  }
 }
