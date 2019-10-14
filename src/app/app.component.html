@@ -9,33 +9,11 @@
 </nav>
 
 <div class="container">
-  <img [src]="event.imageSrc" />
-  <h1>{{ event.name }}</h1>
-  <p>{{ event.date }}</p>
-  <p>${{ event.price }}</p>
-  <p>{{ event.description }}</p>
-
-  <img [src]="secondEvent.imageSrc" />
-  <h1>{{ secondEvent.name }}</h1>
-  <p>{{ secondEvent.date }}</p>
-  <p>${{ secondEvent.price }}</p>
-  <p>{{ secondEvent.description }}</p>
-
-  <img [src]="thirdEvent.imageSrc" />
-  <h1>{{ thirdEvent.name }}</h1>
-  <p>{{ thirdEvent.date }}</p>
-  <p>${{ thirdEvent.price }}</p>
-  <p>{{ thirdEvent.description }}</p>
-
-  <img [src]="fourthEvent.imageSrc" />
-  <h1>{{ fourthEvent.name }}</h1>
-  <p>{{ fourthEvent.date }}</p>
-  <p>${{ fourthEvent.price }}</p>
-  <p>{{ fourthEvent.description }}</p>
-
-  <img [src]="fifthEvent.imageSrc" />
-  <h1>{{ fifthEvent.name }}</h1>
-  <p>{{ fifthEvent.date }}</p>
-  <p>${{ fifthEvent.price }}</p>
-  <p>{{ fifthEvent.description }}</p>
+  <div *ngFor="let event of events">
+    <img [src]="event.imageSrc" />
+    <h1 [ngClass]="{'redTitle': event.price > 200}">{{ event.name }}</h1>
+    <p>{{ event.date }}</p>
+    <p [ngClass]="{'redTitle': event.price > 200}">${{ event.price }}</p>
+    <p>{{ event.description }}</p>
+  </div>
 </div>
