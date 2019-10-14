@@ -20,7 +20,7 @@ export class AppComponent {
     date: new Date('08/02/2020'),
     price: 200,
     description: "Lollapalooza is an annual four-day music festival based in Chicago, Illinois at Grant Park.",
-    imageSrc: "https://image.freepik.com/free-vector/music-event-poster-template-with-colorful-shapes_1361-1591.jpg"
+    imageSrc: "https://image.freepik.com/free-vector/colorful-music-event-poster-template_1361-1592.jpg"
   };
 
   thirdEvent: MusicEvent = {
@@ -44,6 +44,6 @@ export class AppComponent {
     date: new Date('03/20/2020'),
     price: 300,
     description: "Seen as the ultimate gathering for electronic music fans across the nation and globe, the streets of Miami turn into a bold and pumping party with worshipped DJs providing the summertime soundtrack.",
-    imageSrc: "https://image.freepik.com/free-vector/colorful-music-event-poster-template_1361-1592.jpg"
+    imageSrc: "https://image.freepik.com/free-vector/music-event-poster-template-with-colorful-shapes_1361-1591.jpg"
   };
 }
