@@ -1,0 +1,7 @@
+<div>
+  <img [src]="event.imageSrc" />
+  <h1 [ngClass]="{'redTitle': event.price > 200}">{{ event.name }}</h1>
+  <p>{{ event.date }}</p>
+  <p [ngClass]="{'redTitle': event.price > 200}">${{ event.price }}</p>
+  <p>{{ event.description }}</p>
+</div>
