@@ -9,5 +9,5 @@
 </nav>
 
 <div class="container">
-  <app-music-event [event]="event" *ngFor="let event of events"></app-music-event>
+  <app-music-event [event]="event" (clickevent)="logName($event)" *ngFor="let event of events"></app-music-event>
 </div>

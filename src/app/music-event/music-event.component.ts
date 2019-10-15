@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MusicEvent } from '../MusicEvent';
 
 @Component({
@@ -9,4 +9,13 @@ import { MusicEvent } from '../MusicEvent';
 
 export class MusicEventComponent {
   @Input() event: MusicEvent;
+  @Output() clickevent: EventEmitter<string> = new EventEmitter();
+
+  AddBang(value: string): string {
+    return value + '!';
+  }
+
+  emitToParent() {
+    this.clickevent.emit(this.event.name);
+  }
 }

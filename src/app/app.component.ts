@@ -44,4 +44,8 @@ export class AppComponent {
       imageSrc: 'https://image.freepik.com/free-vector/music-event-poster-template-with-colorful-shapes_1361-1591.jpg'
     }
   ];
+
+  logName(value: string) {
+    console.log(value);
+  }
 }
