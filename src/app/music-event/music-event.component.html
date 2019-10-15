@@ -1,8 +1,10 @@
-<div>
+<mat-card>
   <img [src]="event.imageSrc" />
-  <h1 [ngClass]="{'redTitle': event.price > 200}">{{ AddBang(event.name) }}</h1>
-  <p>{{ event.date }}</p>
-  <p [ngClass]="{'redTitle': event.price > 200}">${{ event.price }}</p>
-  <p>{{ event.description }}</p>
-  <button (click)="emitToParent()">Click me!</button>
-</div>
+  <div class="eventDataContainer">
+    <h1 [ngClass]="{'redTitle': event.price > 200}">{{ AddBang(event.name) }}</h1>
+    <p>{{ event.date }}</p>
+    <p [ngClass]="{'redTitle': event.price > 200}">${{ event.price }}</p>
+    <p>{{ event.description }}</p>
+    <button mat-flat-button color="primary" (click)="emitToParent()">Click me!</button>
+  </div>
+</mat-card>
