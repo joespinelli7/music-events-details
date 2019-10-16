@@ -9,6 +9,7 @@
 </nav>
 
 <div class="container">
+  <app-login></app-login>
   <div class="row">
     <div *ngFor="let event of musicevents" class="col-6">
       <app-music-event [event]="event" (clickevent)="logName($event)"></app-music-event>
