@@ -3,7 +3,8 @@
     <h2>Music Events</h2>
     <ul>
       <li>Add new event</li>
-      <li>Login</li>
+      <li *ngIf="!user">Login</li>
+      <li *ngIf="user">Logout: {{user.username}}</li>
     </ul>
   </div>
 </nav>
