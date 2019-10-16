@@ -1,19 +1,14 @@
 <nav>
   <div class="col-8 offset-2">
-    <h2>Music Events</h2>
+    <h2 [routerLink]="['home']">Music Events</h2>
     <ul>
       <li>Add new event</li>
       <li *ngIf="!user">Login</li>
-      <li *ngIf="user">Logout: {{user.username}}</li>
+      <li *ngIf="user" (click)="Logout()">Logout: {{user.username}}</li>
     </ul>
   </div>
 </nav>
 
-<div class="container">
-  <app-login></app-login>
-  <div class="row">
-    <div *ngFor="let event of musicevents" class="col-6">
-      <app-music-event [event]="event" (clickevent)="logName($event)"></app-music-event>
-    </div>
-  </div>
+<div class="container" id="contentContainer">
+  <router-outlet></router-outlet>
 </div>

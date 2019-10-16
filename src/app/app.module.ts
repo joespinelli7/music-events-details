@@ -6,14 +6,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatInputModule } from '@angular/material';
 import { PriceRangePipe } from './price-range.pipe';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { MusicEventListComponent } from './music-event-list/music-event-list.component'
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     MusicEventComponent,
     PriceRangePipe,
-    LoginComponent
+    LoginComponent,
+    MusicEventListComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,11 @@ import { FormsModule } from '@angular/forms'
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([{
+      path: 'home',
+      component: MusicEventListComponent
+    }])
   ],
   providers: [],
   bootstrap: [AppComponent]
