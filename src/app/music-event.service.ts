@@ -7,6 +7,7 @@ import { MusicEvent } from './MusicEvent';
 export class MusicEventService {
   events: MusicEvent[] = [
     {
+      id: 0,
       name: 'ACL Festival',
       date: new Date('10/13/2020'),
       price: 150,
@@ -14,6 +15,7 @@ export class MusicEventService {
       imageSrc: 'https://image.freepik.com/free-psd/banner-template-summer-festival_23-2148174550.jpg'
     },
     {
+      id: 1,
       name: 'Lollapalooza',
       date: new Date('08/02/2020'),
       price: 200,
@@ -21,6 +23,7 @@ export class MusicEventService {
       imageSrc: 'https://image.freepik.com/free-vector/colorful-music-event-poster-template_1361-1592.jpg'
     },
     {
+      id: 2,
       name: 'Coachella',
       date: new Date('04/17/2020'),
       price: 400,
@@ -28,6 +31,7 @@ export class MusicEventService {
       imageSrc: 'https://image.freepik.com/free-photo/crowd-people-dancefloor-with-hands-raised-disco-lights_106386-78.jpg'
     },
     {
+      id: 3,
       name: 'South By South West',
       date: new Date('03/16/2020'),
       price: 100,
@@ -35,6 +39,7 @@ export class MusicEventService {
       imageSrc: 'https://img.freepik.com/free-vector/modern-music-event-poster-template_1361-1292.jpg?size=626&ext=jpg'
     },
     {
+      id: 4,
       name: 'Ultra Music Festival',
       date: new Date('03/20/2020'),
       price: 300,
@@ -47,5 +52,9 @@ export class MusicEventService {
 
   GetMusicEvents(): MusicEvent[] {
     return this.events;
+  }
+
+  GetMusicEvent(id: number): MusicEvent {
+    return this.events.find(event => event.id === id);
   }
 }

@@ -1,4 +1,5 @@
 export class MusicEvent {
+  id: number;
   name: string;
   date: Date;
   price: number;

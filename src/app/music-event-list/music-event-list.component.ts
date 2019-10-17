@@ -15,8 +15,4 @@ export class MusicEventListComponent implements OnInit {
   ngOnInit() {
     this.musicevents = this.musicEventService.GetMusicEvents();
   }
-
-  logName(value: string) {
-    console.log(value);
-  }
 }
