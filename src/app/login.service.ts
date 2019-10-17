@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class LoginService {
   user: BehaviorSubject<User> = new BehaviorSubject(undefined);
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   Login(username: string, password: string) {
     if (username && password) {
@@ -18,6 +19,7 @@ export class LoginService {
 
   Logout() {
     this.user.next(undefined);
+    this.router.navigate(['/login']);
   }
 
   GetUser(): Observable<User> {
