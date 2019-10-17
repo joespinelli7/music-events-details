@@ -2,9 +2,9 @@
   <div class="col-8 offset-2">
     <h2 [routerLink]="['home']">Music Events</h2>
     <ul>
-      <li>Add new event</li>
-      <li *ngIf="!user">Login</li>
-      <li *ngIf="user" (click)="Logout()">Logout: {{user.username}}</li>
+      <li [routerLink]="['event', 'add']">Add new event</li>
+      <li *ngIf="!user" [routerLink]="['login']">Login</li>
+      <li *ngIf="user" (click)="Logout()" >Logout: {{user.username}}</li>
     </ul>
   </div>
 </nav>
