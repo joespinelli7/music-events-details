@@ -1,25 +1,28 @@
 <mat-card class="col-8 offset-2">
   <h2>Add new event</h2>
+  <p>(* = required field)</p>
   <form [formGroup]="musicEventForm">
     <mat-form-field>
-      <input placeholder="Name" matInput type="text"  formControlName="Name"/>
+      <input placeholder="Name *, minimum 3 character length." matInput type="text"  formControlName="Name"/>
     </mat-form-field>
     <mat-form-field>
-      <input placeholder="Price" matInput type="number" formControlName="Price"/>
+      <input placeholder="Price *" matInput type="number" formControlName="Price"/>
     </mat-form-field>
     <mat-form-field>
-      <input placeholder="Date" matInput type="text" formControlName="Date"/>
+      <input placeholder="Date *, format (MM/DD/YYYY)" matInput type="text" formControlName="Date"/>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea placeholder="Description *, minimum 15 character length." matInput formControlName="Description"></textarea>
     </mat-form-field>
     <mat-form-field>
       <input placeholder="Image url" matInput type="text" formControlName="ImageUrl"/>
     </mat-form-field>
-    <mat-form-field>
-      <textarea placeholder="Description" matInput formControlName="Description"></textarea>
-    </mat-form-field>
     <div class="buttonContainer">
-      <button mat-flat-button color="primary">Cancel</button>
-      <button mat-flat-button color="primary">Add</button>
+      <button mat-flat-button color="primary" (click)="Cancel()">Cancel</button>
+      <button mat-flat-button color="primary" [disabled]="!musicEventForm.valid" (click)="Add()">Add</button>
     </div>
   </form>
   {{musicEventForm.value | json}}
+  {{'valid: ' + musicEventForm.valid}}
+  {{'dirty: ' + musicEventForm.dirty}}
 </mat-card>

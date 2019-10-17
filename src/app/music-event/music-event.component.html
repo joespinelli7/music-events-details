@@ -1,10 +1,10 @@
 <mat-card [routerLink]="['/event', event.id]">
   <img [src]="event.imageSrc" />
   <div class="eventDataContainer">
-    <h1 [ngClass]="{'redTitle': event.price > 200, 'greenTitle': event.price <= 100}">{{ AddBang(event.name) }}</h1>
-    <p>Date: {{ event.date | date: 'shortDate' }}</p>
-    <p [ngClass]="{'redTitle': event.price > 200, 'greenTitle': event.price <= 100}">Price: ${{ event.price}} ({{ event.price | priceRange }})</p>
-    <p>{{ event.description }}</p>
+    <h1 [ngClass]="{'redTitle': event.price > 200, 'greenTitle': event.price <= 100}">{{ AddBang(event.name) }} </h1>
+    <p>Date: {{ event.date | date: 'shortDate' }} 📅</p>
+    <p [ngClass]="{'redTitle': event.price > 200, 'greenTitle': event.price <= 100}">Price: ${{ event.price}} ({{ event.price | priceRange }}) 💵</p>
+    <p>{{ event.description }} ℹ️</p>
     <div class="overlay"></div>
   </div>
 </mat-card>
