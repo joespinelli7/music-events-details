@@ -8,8 +8,10 @@ import { MusicEvent } from '../MusicEvent';
 })
 
 export class MusicEventComponent {
+  // @Input decorator used to pass data from parent to child component. From app.component parent to this child component.
   @Input() event: MusicEvent;
 
+  // simply function to add an exclamation point to each event title in html.
   AddBang(value: string): string {
     return value + '!';
   }

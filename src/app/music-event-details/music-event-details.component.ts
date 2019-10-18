@@ -13,6 +13,11 @@ export class MusicEventDetailsComponent implements OnInit {
 
   constructor(private musicEventService: MusicEventService, private activatedRoute: ActivatedRoute) { }
 
+  // activatedRoute is used to provide access to information about a route associated with a component. So this will
+  // grab info of the specific music event we are dealing with.
+  // paramMap: A map that provides access to the required and optional parameters specific to a route. The map
+  // supports retrieving a single value with get(). So using paramMap to subscribe and pick out the exact
+  // music event we want to see rendered.
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.event = this.musicEventService.GetMusicEvent(+params.get('id'));

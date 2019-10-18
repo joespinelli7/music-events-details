@@ -12,6 +12,8 @@ export class MusicEventListComponent implements OnInit {
 
   constructor(private musicEventService: MusicEventService) { }
 
+  // upon component initialization, grab all the music events from the music event service class.
+  // ngOnInit is a good lifecycle method for this b/c it ensures the component is loaded before grabbing all the data.
   ngOnInit() {
     this.musicevents = this.musicEventService.GetMusicEvents();
   }

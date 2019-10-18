@@ -12,12 +12,15 @@ export class AppComponent implements OnInit {
 
   constructor(private loginService: LoginService) { }
 
+  // lifecycle method thats ran upon initialization of the app componenet and is used to grab the current
+  // user if someone logged in.
   ngOnInit(): void {
     this.loginService.GetUser().subscribe((user: User) => {
       this.user = user;
     });
   }
 
+  // calls on loginService and logs user out therefore setting user to undefined.
   Logout() {
     this.loginService.Logout();
   }

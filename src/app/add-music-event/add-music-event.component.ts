@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MusicEvent } from '../MusicEvent';
 import { MusicEventService } from '../music-event.service';
-// FormControl in @angular/forms
 
 @Component({
   selector: 'app-add-music-event',
@@ -11,10 +10,12 @@ import { MusicEventService } from '../music-event.service';
   styleUrls: ['./add-music-event.component.scss']
 })
 export class AddMusicEventComponent implements OnInit {
-
+  // FormGroup: uesed to track the value and validity state of a group of FormControl instances.
   musicEventForm: FormGroup;
 
   constructor(private formbuilder: FormBuilder, private router: Router, private musicEventService: MusicEventService) {
+    // FormBuilder to create the form and have first element of array for value user types in and second element
+    // to set any validations on that input field.
     this.musicEventForm = this.formbuilder.group({
       Name: ['', [Validators.required, Validators.minLength(3)]],
       Price: ['', [Validators.required]],
@@ -34,6 +35,8 @@ export class AddMusicEventComponent implements OnInit {
   ngOnInit() {
   }
 
+  // takes all the info the user types in on the html Add btn and saves it in musicEvent variable.
+  // then pushes that event into the musicevent service class to add it to the page.
   Add() {
     const musicEvent: MusicEvent = {
       name: this.musicEventForm.controls.Name.value,

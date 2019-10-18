@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  // handles all the login and talks to the login service to ensure the username and password is passed in.
   username: string;
   password: string;
   constructor(private loginService: LoginService, private router: Router) { }

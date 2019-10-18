@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PriceRangePipe implements PipeTransform {
 
+  // pipe filter used to return string of price range description based off price of event's ticket.
   transform(value: number, ...args: any[]): string {
     if (value > 200) {
       return 'Expensive';

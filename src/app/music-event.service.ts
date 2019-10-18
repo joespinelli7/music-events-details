@@ -5,6 +5,7 @@ import { MusicEvent } from './MusicEvent';
   providedIn: 'root'
 })
 export class MusicEventService {
+  // events to hold all data of the music events in an array of objects.
   events: MusicEvent[] = [
     {
       id: 0,
@@ -50,10 +51,12 @@ export class MusicEventService {
 
   constructor() { }
 
+  // used to return all the events in this service to component that calls this function.
   GetMusicEvents(): MusicEvent[] {
     return this.events;
   }
 
+  // used to return single event matching the id passed in of the targeted event.
   GetMusicEvent(id: number): MusicEvent {
     return this.events.find(event => event.id === id);
   }

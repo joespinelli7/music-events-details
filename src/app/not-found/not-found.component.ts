@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
+  // simply used to render a can't find page screen if user types in URL that doesn't exist.
+  // placed in app.module.ts as a final route.
   constructor() { }
 
   ngOnInit() {
