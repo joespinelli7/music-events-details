@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MusicEvent } from '../MusicEvent';
 import { MusicEventService } from '../music-event.service';
+// FormControl in @angular/forms
 
 @Component({
   selector: 'app-add-music-event',
@@ -15,7 +16,7 @@ export class AddMusicEventComponent implements OnInit {
 
   constructor(private formbuilder: FormBuilder, private router: Router, private musicEventService: MusicEventService) {
     this.musicEventForm = this.formbuilder.group({
-      Name: ['Initial value', [Validators.required, Validators.minLength(3)]],
+      Name: ['', [Validators.required, Validators.minLength(3)]],
       Price: ['', [Validators.required]],
       Date: ['', [Validators.required]],
       Description: ['', [Validators.required, Validators.minLength(15)]],
