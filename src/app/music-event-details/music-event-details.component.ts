@@ -8,6 +8,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   templateUrl: './music-event-details.component.html',
   styleUrls: ['./music-event-details.component.scss']
 })
+// routing to display an individual music event details is set up in music-event folder html using [routerLink]="['/event', event.id]".
 export class MusicEventDetailsComponent implements OnInit {
   event: MusicEvent;
 

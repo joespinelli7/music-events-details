@@ -51,16 +51,20 @@ export class MusicEventService {
 
   constructor() { }
 
-  // used to return all the events in this service to component that calls this function.
+  // used to return all the events in this service to component that calls this function and implemented in
+  // music-event-list component.ts file to pull in all events upon initialization.
   GetMusicEvents(): MusicEvent[] {
     return this.events;
   }
 
-  // used to return single event matching the id passed in of the targeted event.
+  // used to return single event matching the id passed in of the targeted event and implemented in music-event-details
+  // component.ts file to render a specific event.
   GetMusicEvent(id: number): MusicEvent {
     return this.events.find(event => event.id === id);
   }
 
+  // used to add a new event to the music service event array and implemented in add-music-event component.ts.
+  // takes values of form as an object with key value pairs and pushes it into music events array. 
   AddMusicEvent(musicEvent: MusicEvent) {
     musicEvent.id = this.events.length;
     this.events.push(musicEvent);
