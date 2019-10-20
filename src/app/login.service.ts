@@ -21,7 +21,7 @@ export class LoginService {
     }
   }
 
-  // logs user out therefore setting state to undefeined and navigating back to login page.
+  // logs user out by setting state to undefined and navigating back to login page.
   Logout() {
     this.user.next(undefined);
     this.router.navigate(['/login']);
