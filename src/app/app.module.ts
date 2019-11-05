@@ -13,6 +13,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AddMusicEventComponent } from './add-music-event/add-music-event.component';
 import { MusicEventDetailsComponent } from './music-event-details/music-event-details.component';
 
+// ng serve --open to start app.
+
 @NgModule({
   declarations: [
     AppComponent,
